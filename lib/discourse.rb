@@ -1207,6 +1207,7 @@ module Discourse
       Thread.new { LetterAvatar.image_magick_version },
       Thread.new { SvgSprite.core_svgs },
       Thread.new { EmberCli.script_chunks },
+      Thread.new { AssetProcessor.snapshot },
     ].each(&:join)
   ensure
     @preloaded_rails = true
